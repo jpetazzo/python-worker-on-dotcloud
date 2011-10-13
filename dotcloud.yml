@@ -1,0 +1,4 @@
+worker:
+  type: custom
+  buildscript: builder
+  process: ~/run
