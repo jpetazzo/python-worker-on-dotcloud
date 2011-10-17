@@ -1,11 +1,14 @@
-#!/bin/sh
+#!/bin/bash
 [ -d ~/virtualenv ] ||
     virtualenv --python=python2.7 ~/virtualenv
-[ -d ~/bin ] ||
-    ln -s ~/virtualenv/bin ~/bin
+. ~/virtualenv/bin/activate
 [ -f requirements.txt ] &&
     pip install --download-cache=~/.pip-cache -r requirements.txt
 [ -f setup.py ] &&
     python setup.py install
-cp run ~/run
+cp -a . ~
 rm -f ~/supervisor.conf
+cat >~/profile <<EOF
+. ~/virtualenv/bin/activate
+export PYTHONPATH=~
+EOF
