@@ -1,1 +1,0 @@
-http://gevent.googlecode.com/files/gevent-1.0a3.tar.gz#egg=gevent==1.0a3
