@@ -1,4 +1,7 @@
 worker:
   type: custom
-  buildscript: builder
+  buildscript: python-worker/builder
+  approot: mycode
   process: ~/run
+  environment:
+    PYTHON_VERSION: 2.7
